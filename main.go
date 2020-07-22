@@ -35,7 +35,7 @@ func run(file string) {
 	if len(os.Args) > 2 {
 		args = append(args, os.Args[2:]...)
 	}
-	out, err := exec.Command("java", args...).Output()
+	out, err := exec.Command("java", args...).CombinedOutput()
 	if err != nil {
 		log.Fatal("Command finished with error: %v", err)
 	}
