@@ -37,7 +37,7 @@ func run(file string) {
 	}
 	out, err := exec.Command("java", args...).CombinedOutput()
 	if err != nil {
-		log.Fatal("Command finished with error: %v", err)
+		log.Fatal("Command finished with error: ", err, "\n", string(out))
 	}
 	fmt.Print(string(out))
 }
